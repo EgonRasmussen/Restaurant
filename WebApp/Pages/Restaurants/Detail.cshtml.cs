@@ -28,5 +28,12 @@ namespace WebApp.Pages.Restaurants
             }
             return Page();
         }
+
+        // Named Handler Metode, der returnerer _Summary asynkront til View
+        public PartialViewResult OnGetRestaurantPartial(int restaurantId)
+        {
+            Restaurant = _restaurantService.GetRestaurantById(restaurantId);
+            return Partial("_Summary", Restaurant);
+        }
     }
 }

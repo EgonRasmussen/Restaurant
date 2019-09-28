@@ -1,4 +1,4 @@
-﻿@page "{restaurantId:int}"
+﻿@page "{restaurantId:int}/{handler?}"
 
 @model WebApp.Pages.Restaurants.DetailModel
 @{
@@ -6,21 +6,31 @@
 }
 
 <h2>@Model.Restaurant.Name</h2>
-<div>
-    <img src="@Model.Restaurant.ImageUrl" alt="Alternate Text" class="img-thumbnail my-4" />
-</div>
+@*   <div>
+        <img src="@Model.Restaurant.ImageUrl" alt="Alternate Text" class="img-thumbnail my-4" />
+    </div>
 
-<div>
-    Id: @Model.Restaurant.Id
-</div>
-<div>
-    Location: @Model.Restaurant.Location
-</div>
-<div>
-    Cuisine: @Model.Restaurant.Cuisine
-</div>
+    <div>
+        Id: @Model.Restaurant.Id
+    </div>
+    <div>
+        Location: @Model.Restaurant.Location
+    </div>
+    <div>
+        Cuisine: @Model.Restaurant.Cuisine
+    </div>*@
 
-
+<p><button class="btn btn-primary" id="load">Hent Restaurant</button></p>
+<div id="grid"></div>
+@section scripts{
+    <script>
+        $(function () {
+            $('#load').on('click', function () {
+                $('#grid').load(@Model.Restaurant.Id + '/restaurantpartial' );
+            });
+        });
+    </script>
+}
 
 <a asp-page="./List" class="btn btn-info">All Restaurants</a>
 
