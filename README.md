@@ -39,4 +39,4 @@ I Detail-View'et er der lavet Templated Routing for at undgå QueryStrings:
 
 ```c#
 @page "{restaurantId:int}/{handler?}"
-``
+```
