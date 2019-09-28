@@ -1,4 +1,4 @@
-# 9. PartialPageUpdate
+# 9. PartialPageWithAJAX
 Dette er en branch-out fra 6.PartialView, som demonstrerer hvordan et Partial View kaldet *_Summary.cshtml* hentes vha. jQuery
 
 Ref: [Partial Page Update with AJAX in Razor Pages](https://www.learnrazorpages.com/razor-pages/ajax/partial-update)
