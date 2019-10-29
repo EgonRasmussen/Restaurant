@@ -24,43 +24,43 @@ namespace WebApp.Pages.Restaurants
 
         public IActionResult OnGet(int? restaurantId)
         {
-            Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
+            //Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
 
-            if (restaurantId.HasValue)
-            {
-                Restaurant = _restaurantService.GetRestaurantById(restaurantId.Value);
-            }
-            else
-            {
-                Restaurant = new Restaurant();
-            }
+            //if (restaurantId.HasValue)
+            //{
+            //    Restaurant = _restaurantService.GetRestaurantById(restaurantId.Value);
+            //}
+            //else
+            //{
+            //    Restaurant = new Restaurant();
+            //}
             
 
-            if (Restaurant == null)
-            {
-                return RedirectToPage("./NotFound");
-            }
+            //if (Restaurant == null)
+            //{
+            //    return RedirectToPage("./NotFound");
+            //}
             return Page();
         }
 
         public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
-                return Page();
+            //if (!ModelState.IsValid)
+            //{
+            //    Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
+            //    return Page();
                
-            }
-            if (Restaurant.Id > 0)
-            {
-                _restaurantService.Update(Restaurant);
-            }
-            else
-            {
-                _restaurantService.Add(Restaurant);
-            }
-            _restaurantService.Commit();
-            TempData["Message"] = "Restaurant saved!";
+            //}
+            //if (Restaurant.Id > 0)
+            //{
+            //    _restaurantService.Update(Restaurant);
+            //}
+            //else
+            //{
+            //    _restaurantService.Add(Restaurant);
+            //}
+            //_restaurantService.Commit();
+            //TempData["Message"] = "Restaurant saved!";
             return RedirectToPage("./Detail", new { restaurantId = Restaurant.Id });
         }
     }

@@ -1,5 +1,5 @@
 ﻿@using DataLayer.Entities
-@model Restaurant
+@model ServiceLayer.DTO.ListRestaurantDto
 
 <div class="col-sm-3">
     <div class="card my-3">
@@ -7,7 +7,7 @@
         <div class="card-body">
             <h5 class="card-title">@Model.Name</h5>
             <p class="card-text">@Model.Location</p>
-            <p class="card-text">@Model.Cuisine</p>
+            <p class="card-text">@Model.CuisineName</p>
         </div>
         <div class="card-footer text-muted">
             <a asp-page="./Detail" asp-route-restaurantId="@Model.Id">

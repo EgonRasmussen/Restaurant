@@ -18,25 +18,25 @@ namespace WebApp.Pages.Restaurants
         }
         public IActionResult OnGet(int restaurantId)
         {
-            Restaurant = _restaurantService.GetRestaurantById(restaurantId);
-            if (Restaurant == null)
-            {
-                return RedirectToPage("./NotFound");
-            }
+            //Restaurant = _restaurantService.GetRestaurantById(restaurantId);
+            //if (Restaurant == null)
+            //{
+            //    return RedirectToPage("./NotFound");
+            //}
             return Page();
         }
 
         public IActionResult OnPost(int restaurantId)
         {
-            var restaurant = _restaurantService.Delete(restaurantId);
-            _restaurantService.Commit();
+            //var restaurant = _restaurantService.Delete(restaurantId);
+            //_restaurantService.Commit();
 
-            if (restaurant == null)
-            {
-                return RedirectToPage("./NotFound");
-            }
+            //if (restaurant == null)
+            //{
+            //    return RedirectToPage("./NotFound");
+            //}
 
-            TempData["Message"] = $"{restaurant.Name} deleted";
+            //TempData["Message"] = $"{restaurant.Name} deleted";
             return RedirectToPage("./List");   
         }
     }

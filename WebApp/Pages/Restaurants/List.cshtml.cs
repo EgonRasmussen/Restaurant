@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer;
+using ServiceLayer.DTO;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +11,7 @@ namespace OdeToFoodWebApp.Pages.Restaurants
     public class ListModel : PageModel
     {
         public string Message { get; set; }
-        public IList<Restaurant> Restaurants { get; set; }
+        public IList<ListRestaurantDto> Restaurants { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }

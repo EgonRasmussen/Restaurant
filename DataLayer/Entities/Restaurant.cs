@@ -12,10 +12,10 @@ namespace DataLayer.Entities
         [Required, StringLength(255)]
         public string Location { get; set; }
 
-
+        public int CuisineId { get; set; }      // FK
         public string ImageUrl { get; set; }
 
-        public CuisineType Cuisine { get; set; }
+        public Cuisine Cuisine { get; set; }
     }
 }
 

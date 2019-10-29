@@ -1,3 +1,4 @@
+using AutoMapper;
 using DataLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ServiceLayer;
+using System;
 
 namespace WebApp
 {
@@ -23,6 +25,8 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("InMemoryDb"));
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    // AutoMapper
 
             services.AddScoped<IRestaurantService, RestaurantService>();
 

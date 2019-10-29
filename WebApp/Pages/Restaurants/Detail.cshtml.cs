@@ -2,12 +2,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer;
+using ServiceLayer.DTO;
 
 namespace WebApp.Pages.Restaurants
 {
     public class DetailModel : PageModel
     {
-        public Restaurant Restaurant { get; set; }
+        public DetailRestaurantDto Restaurant { get; set; }
 
         [TempData]
         public string Message { get; set; }
