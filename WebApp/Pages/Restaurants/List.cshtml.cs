@@ -12,8 +12,6 @@ namespace OdeToFoodWebApp.Pages.Restaurants
     {
         public string Message { get; set; }
         public IList<Restaurant> Restaurants { get; set; }
-        
-
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
@@ -30,7 +28,7 @@ namespace OdeToFoodWebApp.Pages.Restaurants
 
         public void OnGet()
         {
-            this.logger.LogDebug("********************************* ListRestarant was called");
+            logger.LogError("****************************** Simulering af en Error ************************");
             Restaurants = _restaurantService.GetRestaurantsByName(SearchTerm).ToList();
         }
     }
