@@ -30,7 +30,7 @@ namespace OdeToFoodWebApp.Pages.Restaurants
 
         public void OnGet()
         {
-            this.logger.LogDebug("Index was called");
+            this.logger.LogDebug("********************************* ListRestarant was called");
             Restaurants = _restaurantService.GetRestaurantsByName(SearchTerm).ToList();
         }
     }
